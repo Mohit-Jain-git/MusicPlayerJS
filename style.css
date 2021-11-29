@@ -20,9 +20,25 @@ body {
 .nav ul li {
   padding: 0 20px;
 }
+.example {
+  width: 300px;
+  padding-right: 2vw;
+  border-radius: 10px;
+  margin-left: 59vw;
+}
+.search1 {
+  font-size: 22px;
+  border-radius: 18px;
+}
+.btn {
+  font-size: 24px;
+  border-radius: 18px;
+  color: blue;
+}
 .brand img {
   width: 80px;
   padding: 0 10px;
+  background: none;
 }
 .brand {
   display: flex;
@@ -100,7 +116,7 @@ body {
   height: 2vh;
   width: 12vh;
   opacity: 0;
-  transition: opacity 1s ease-in;
+  transition: opacity 0.4s ease-in;
 }
 .songInfo {
   position: absolute;
@@ -108,3 +124,43 @@ body {
   top: 92vh;
   font-size: 25px;
 }
+#gif {
+  opacity: 0;
+}
+/* .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 70vw;
+  max-width: 80%;
+}
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.modal-header .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.modal-body {
+  padding: 10px 15px;
+} */
