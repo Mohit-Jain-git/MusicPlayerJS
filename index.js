@@ -6,22 +6,20 @@ let progressBar = document.getElementById("progressBar");
 let gif = document.getElementById("gif");
 let songItems = Array.from(document.getElementsByClassName("songItem"));
 let masterSongName = document.getElementById("masterSongName");
-// let About = document.getElementsByClassName("About");
-// About.addEventListener("click", () => {
-//   About.classList.add("active");
-// });
-// fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
-//   method: "GET",
-//   headers: {
-//     Authorization: `Bearer ${userAccessToken}`,
-//   },
-// })
-//   .then((response) => response.json())
-//   .then(({ beats }) => {
-//     beats.forEach((beat, index) => {
-//       console.log(`Beat ${index} starts at ${beat.start}`);
-//     });
-//   });
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+span.onclick = function () {
+  modal.style.display = "none";
+};
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
 let songs = [
   {
     songName: "Baarish",
@@ -70,11 +68,15 @@ masterPlay.addEventListener("click", () => {
     masterPlay.classList.remove("fa-play-circle");
     masterPlay.classList.add("fa-pause-circle");
     gif.style.opacity = 1;
+    songItems.id.classList.remove("fa-play-circle");
+    songItems.id.classList.add("fa-pause-circle");
   } else {
     audioElement.pause();
     masterPlay.classList.remove("fa-pause-circle");
     masterPlay.classList.add("fa-play-circle");
     gif.style.opacity = 0;
+    songItems.id.classList.add("fa-play-circle");
+    songItems.id.classList.remove("fa-pause-circle");
   }
 });
 audioElement.addEventListener("timeupdate", () => {
@@ -94,12 +96,6 @@ const makeAllPlays = () => {
     }
   );
 };
-
-// const makeAll0 = () => {
-//   Array.from(gif).forEach((element) => {
-//     element.style.opacity = 0;
-//   });
-// };
 let click = 0;
 Array.from(document.getElementsByClassName("songItemPlay")).forEach(
   (element) => {
@@ -156,3 +152,15 @@ document.getElementById("prev").addEventListener("click", () => {
   masterPlay.classList.add("fa-pause-circle");
   masterSongName.innerText = songs[songIndex].songName;
 });
+// about.addEventListener("click", () => {
+//   console.log("yes");
+//   modal.style.display = "block";
+// });
+// span.onclick = function () {
+//   modal.style.display = "none";
+// };
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
