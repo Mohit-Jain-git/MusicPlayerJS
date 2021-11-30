@@ -10,10 +10,8 @@ let masterSongName = document.getElementById("masterSongName");
 // About.addEventListener("click", () => {
 //   About.classList.add("active");
 // });
-fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f").then(
-  (data) => console.log(data)
-);
-//   {method: "GET",
+// fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
+//   method: "GET",
 //   headers: {
 //     Authorization: `Bearer ${userAccessToken}`,
 //   },
@@ -23,7 +21,7 @@ fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f").then(
 //     beats.forEach((beat, index) => {
 //       console.log(`Beat ${index} starts at ${beat.start}`);
 //     });
-//   })
+//   });
 let songs = [
   {
     songName: "Baarish",
@@ -80,7 +78,6 @@ masterPlay.addEventListener("click", () => {
   }
 });
 audioElement.addEventListener("timeupdate", () => {
-  console.log("timeupdate");
   progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
   progressBar.value = progress;
 });
